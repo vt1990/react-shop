@@ -5,12 +5,12 @@ import {
     Route,
     Redirect
 } from "react-router-dom";
-import ProductsProvider from "./providers/ProductsProvider";
-import CartProvider from "./providers/CartProvider";
+import ProductsProvider from "./providers/ProductsProvider.jsx";
+import CartProvider from "./providers/CartProvider.jsx";
 // import SingleProductRoute from "./routes/SingleProductRoute";
-import CartRoute from "./routes/CartRoute";
-import ProductsRoute from "./routes/ProductsRoute";
-import AppHeader from "./ui/AppHeader";
+import CartRoute from "./routes/CartRoute.jsx";
+import ProductsRoute from "./routes/ProductsRoute.jsx";
+import AppHeader from "./ui/AppHeader.jsx";
 
 import "./App.css";
 

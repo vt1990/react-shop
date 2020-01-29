@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Product from "../ui/Product";
-import { useProducts } from "../hooks/useProducts";
+import Product from "../ui/Product.jsx";
+import { useProducts } from "../hooks/useProducts.jsx";
 
 export default function ProductRoute() {
     const { productId } = useParams();
-    const { product } = useProducts(productId);
+    const { product } = useProducts({productId});
     const { id, name, price, origin} =
     product || {};
 

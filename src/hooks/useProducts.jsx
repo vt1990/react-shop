@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
+import ServiceXHR from "../helpers/ServiceXHR";
 
-export const useProducts = productsList => {
+export const useProducts = productId => {
     const [products, setProducts] = useState(null);
 
     useEffect(() => {
-        fetch(
-            `https://yalantis-react-school.herokuapp.com/api/v1/products`
-        )
-            .then(res => res.json())
-            .then(products => {
-                setProducts(products);
-            });
-    }, [productsList]);
+        const fetchData = async () => {
+            const result = await ServiceXHR(
+                `/products/${productId}`,
+            );
+
+            setProducts(result.products);
+        };
+
+        fetchData();
+    }, [productId]);
 
     return {
         products

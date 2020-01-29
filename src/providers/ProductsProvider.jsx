@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import ServiceXHR from '../helpers/ServiceXHR';
+import ServiceXHR from '../helpers/ServiceXHR.jsx';
 
 export const ProductsContext = React.createContext({
-    products: [{}],
+    products: [],
 });
 
 export default function ProductsProvider({ children }) {
     const [products, setProducts] = useState([]);
+
+    console.log('products', products);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -18,6 +20,7 @@ export default function ProductsProvider({ children }) {
         };
 
         fetchData();
+        console.log('fetchData()', fetchData())
     }, []);
 
     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "../ui/Product";
+import Product from "../ui/Product.jsx";
 
 export default function ProductsList({products}) {
     return (

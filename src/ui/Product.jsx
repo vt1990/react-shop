@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Card, Icon } from "antd";
 import { Link } from "react-router-dom";
-import { CartContext } from "../providers/CartProvider";
+import { CartContext } from "../providers/CartProvider.jsx";
 
 export default function Product ({
     id,
@@ -13,7 +13,7 @@ export default function Product ({
         CartContext
     );
 
-    console.log(' product=>',  product);
+    // console.log(' product=>',  product);
     // const isCartProduct = product.has(id);
 
     const actions = [
@@ -37,6 +37,8 @@ export default function Product ({
 
     return (
         <Card
+            key={id}
+            id={id}
             style={{ width: 400, margin: 20 }}
             title={name}
             actions={actions}
