@@ -1,23 +1,10 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import Product from "../ui/Product";
-import { useProducts } from "../hooks/useProducts";
+import React, { useContext } from "react";
+import { ProductsContext } from "../providers/ProductsProvider";
+import ProductsList from "../containers/ProductsList";
+
 
 export default function ProductRoute() {
-    const { productId } = useParams();
-    const { product } = useProducts(productId);
-    const { id, name, description, date, price} =
-    product || {};
+    const { products } = useContext(ProductsContext);
 
-    if (!product) return <LoadingSpin />;
-
-    return (
-        <Product
-            id={id}
-            name={name}
-            description={description}
-            date={date}
-            price={price}
-        />
-    );
+    return <ProductsList products={products} />;
 }

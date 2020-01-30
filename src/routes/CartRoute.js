@@ -11,16 +11,11 @@ export default function CartRoute() {
         return ( acc + inCartProduct)
     }, 0);
 
-    // const groupProducts = inCartProducts.reduce((grouped, { origin, title }) => {
-    //     if (!grouped[origin]) grouped[origin] = [];
-    //     grouped[origin].push(title);
-    //     return grouped;
-    // }, {});
-
-    const groupProducts = inCartProducts.filter(el => el === inCartProducts.origin);
-
-    console.log(groupProducts);
-    // console.log(typeof inCartProducts);
+    const groupProducts = inCartProducts.reduce((grouped, obj) => {
+        if (!grouped[obj.origin]) grouped[obj.origin] = [];
+        grouped[obj.origin].push(obj);
+        return grouped;
+    }, {});
 
     return (
         <>
@@ -30,7 +25,7 @@ export default function CartRoute() {
             <div>
                 Total price: {totalPrice}
             </div>
-            <ProductsList products={groupProducts || []}/>
+            <ProductsList products={inCartProducts || []}/>
         </>
     );
 }
