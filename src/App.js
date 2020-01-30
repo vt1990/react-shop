@@ -26,7 +26,7 @@ export default function App() {
                                 <AppHeader/>
                                 <ProductsRoute/>
                             </Route>
-                            <Route path="/products/:productId" >
+                            <Route path="/product/:productId" >
                                 <AppHeader/>
                                 <div>123</div>
                                 <SingleProductRoute/>
@@ -37,10 +37,10 @@ export default function App() {
                                 </Link>
                                 <CartRoute/>
                             </Route>
-                            {/*<Route path="*">*/}
-                            {/*    <AppHeader/>*/}
-                            {/*    <Redirect to="/products"/>*/}
-                            {/*</Route>*/}
+                            <Route path="*">
+                                <AppHeader/>
+                                <Redirect to="/products"/>
+                            </Route>
                         </Switch>
                     </div>
                 </Router>

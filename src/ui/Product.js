@@ -13,7 +13,7 @@ export default function Product ({
     const isCartProduct = inCart.has(id);
 
     const actions = [
-        <Link to={`/products/${id}`}>
+        <Link to={`/product/${id}`}>
             <Button type="primary">
                 preview
                 <Icon type="right" />
@@ -43,7 +43,7 @@ export default function Product ({
             title={title}
             actions={actions}
         >
-            <p>Сountry of manufacture: {origin.toUpperCase()}</p>
+            <p>Сountry of manufacture: {origin}</p>
         </Card>
     );
 }
