@@ -13,7 +13,7 @@ export default function Product ({
     const isCartProduct = inCart.has(id);
 
     const actions = [
-        <Link key="shopping-cart" to={`/products/${id}`}>
+        <Link to={`/products/${id}`}>
             <Button type="primary">
                 preview
                 <Icon type="right" />

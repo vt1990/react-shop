@@ -7,11 +7,12 @@ export default function CartRoute() {
     const { products } = useContext(ProductsContext);
     const { inCart } = useContext(CartContext);
     const inCartProducts = products.filter(product => inCart.has(product.id));
-    const totalPrice = inCartProducts.reduce((acc, inCartProduct) => {
-        return ( acc.price + inCartProduct.price)
+    const totalPrice = inCartProducts.map(productPrice => productPrice.price).reduce((acc, inCartProduct) => {
+        return ( acc + inCartProduct)
     });
 
-    console.log(typeof (totalPrice))
+
+    console.log(inCartProducts);
     // console.log(' product=>',  products)
     return (
         <>

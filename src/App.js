@@ -26,20 +26,21 @@ export default function App() {
                                 <AppHeader/>
                                 <ProductsRoute/>
                             </Route>
-                            <Route path="/products/:productId">
+                            <Route path="/products/:productId" >
                                 <AppHeader/>
+                                <div>123</div>
                                 <SingleProductRoute/>
                             </Route>
                             <Route path="/cart">
-                                <Link key="products" to="/products">
+                                <Link to="/products">
                                     <Button type="default">Products Page</Button>
                                 </Link>
                                 <CartRoute/>
                             </Route>
-                            <Route path="*">
-                                <AppHeader/>
-                                <Redirect to="/products"/>
-                            </Route>
+                            {/*<Route path="*">*/}
+                            {/*    <AppHeader/>*/}
+                            {/*    <Redirect to="/products"/>*/}
+                            {/*</Route>*/}
                         </Switch>
                     </div>
                 </Router>
