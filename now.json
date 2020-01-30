@@ -1,7 +1,0 @@
-{
-  "build": {
-    "env": {
-      "REACT_APP_ONLINE_SHOP_API_KEY": "@online-shop-api-key"
-    }
-  }
-}
