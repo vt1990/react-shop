@@ -22,11 +22,11 @@ export default function CartRoute() {
 
     return (
         <>
-            <div >
-                {inCartProducts.length}
+            <div>
+                Products quantity: {inCartProducts.length}
             </div>
-            <div >
-                {totalPrice}
+            <div>
+                Total price: {totalPrice}
             </div>
             <ProductsList products={inCartProducts || []}/>
         </>

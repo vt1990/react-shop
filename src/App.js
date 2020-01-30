@@ -31,10 +31,12 @@ export default function App() {
                                 <SingleProductRoute/>
                             </Route>
                             <Route path="/cart">
-                                <Link to="/products">
-                                    <Button type="default">Products Page</Button>
-                                </Link>
-                                <CartRoute/>
+                                <div className='cart-wrapper'>
+                                    <Link to="/products">
+                                        <Button type="default">Products Page</Button>
+                                    </Link>
+                                    <CartRoute/>
+                                </div>
                             </Route>
                             <Route path="*">
                                 <AppHeader/>

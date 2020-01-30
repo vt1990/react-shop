@@ -14,9 +14,8 @@ export default function Product ({
 
     const actions = [
         <Link to={`/product/${id}`}>
-            <Button type="primary">
+            <Button type="primary" className='preview'>
                 preview
-                <Icon type="right" />
             </Button>
         </Link>,
         <Icon
