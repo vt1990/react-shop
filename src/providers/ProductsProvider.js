@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ServiceXHR from '../helpers/ServiceXHR.jsx';
+import serviceXHR from '../helpers/ServiceXHR.js';
+import config from '../config.json';
 
 export const ProductsContext = React.createContext({
     products: [],
@@ -8,20 +9,13 @@ export const ProductsContext = React.createContext({
 export default function ProductsProvider({ children }) {
     const [products, setProducts] = useState([]);
 
-    console.log('products', products);
-
     useEffect(() => {
-        const fetchData = async () => {
-            const result = await ServiceXHR(
-                '/products',
-            );
+        (async () => {
+            const { data } = await serviceXHR('get', `${config.url.base}${config.url.products}`);
+            setProducts(data.items);
+        })();
 
-            setProducts(result.products);
-        };
-
-        fetchData();
-        console.log('fetchData()', fetchData())
-    }, []);
+    },[]);
 
     return (
         <ProductsContext.Provider

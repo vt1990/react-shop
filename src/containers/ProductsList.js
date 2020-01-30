@@ -1,16 +1,16 @@
 import React from "react";
-import Product from "../ui/Product.jsx";
+import Product from "../ui/Product.js";
 
 export default function ProductsList({products}) {
     return (
         <div className="content">
-            {products.map(({ id, name, price, origin }) => (
+            {products && products.map(({ id, name, price, origin }) => (
                 <Product
                     key={id}
                     id={id}
                     title={name}
                     price={price}
-                    country={origin}
+                    origin={origin}
                 />
             ))}
         </div>

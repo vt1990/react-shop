@@ -10,6 +10,7 @@ export default function CartProvider({ children }) {
             const nextInCart = new Set(inCart);
             nextInCart.add(id);
             setCart(nextInCart);
+            // console.log(nextInCart);
         },
         [inCart]
     );
