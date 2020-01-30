@@ -28,7 +28,6 @@ export default function App() {
                             </Route>
                             <Route path="/product/:productId" >
                                 <AppHeader/>
-                                <div>123</div>
                                 <SingleProductRoute/>
                             </Route>
                             <Route path="/cart">

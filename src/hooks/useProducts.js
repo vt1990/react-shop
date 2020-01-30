@@ -7,8 +7,8 @@ export const useProducts = productId => {
     const url = `${config.url.base}${config.url.products}/${productId}`;
 
     useEffect(() => {
-        (async () => {
-            const { data } = await ServiceXHR('get', url);
+        ( () => {
+            const { data } =  ServiceXHR('get', url);
             setProducts(data);
         })();
     });

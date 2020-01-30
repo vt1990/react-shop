@@ -34,7 +34,6 @@ export default function Product ({
         <div>{price}</div>
     ];
 
-    // console.log(' addToCart=>',  addToCart());
     return (
         <Card
             key={id}

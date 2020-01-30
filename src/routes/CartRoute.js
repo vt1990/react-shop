@@ -9,11 +9,17 @@ export default function CartRoute() {
     const inCartProducts = products.filter(product => inCart.has(product.id));
     const totalPrice = inCartProducts.map(productPrice => productPrice.price).reduce((acc, inCartProduct) => {
         return ( acc + inCartProduct)
-    });
+    }, 0);
 
+    const groupProducts = inCartProducts.reduce((grouped, { origin, title }) => {
+        if (!grouped[origin]) grouped[origin] = [];
+        grouped[origin].push(title);
+        return grouped;
+    }, {});
+    console.log(groupProducts);
 
-    console.log(inCartProducts);
-    // console.log(' product=>',  products)
+    // console.log(inCartProducts);
+
     return (
         <>
             <div >
@@ -22,7 +28,7 @@ export default function CartRoute() {
             <div >
                 {totalPrice}
             </div>
-            <ProductsList products={inCartProducts}/>
+            <ProductsList products={inCartProducts || []}/>
         </>
     );
 }
