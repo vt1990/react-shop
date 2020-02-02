@@ -1,11 +1,5 @@
 @import "~antd/dist/antd.css";
 
-.content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .cart-wrapper {
     display: flex;
     flex-direction: column;
@@ -15,8 +9,4 @@
 
 .cart-wrapper a {
     margin: 10px 0;
-}
-
-.preview {
-    padding: 5px;
 }

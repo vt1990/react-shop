@@ -17,6 +17,9 @@ export default function CartRoute() {
         return grouped;
     }, {});
 
+    // console.log(groupProducts);
+    // groupProducts.sort();
+
     return (
         <>
             <div>

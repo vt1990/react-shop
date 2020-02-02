@@ -1,6 +1,8 @@
 import React from "react";
 import Product from "../ui/Product.js";
 
+import './ProductList.css';
+
 export default function ProductsList({products}) {
     return (
         <div className="content">

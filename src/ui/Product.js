@@ -3,6 +3,8 @@ import { Card, Icon, Button } from "antd";
 import { Link } from "react-router-dom";
 import { CartContext } from "../providers/CartProvider.js";
 
+import './Product.css';
+
 export default function Product ({
      id,
      title,

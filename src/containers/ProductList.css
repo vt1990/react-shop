@@ -1,0 +1,7 @@
+@import "~antd/dist/antd.css";
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
