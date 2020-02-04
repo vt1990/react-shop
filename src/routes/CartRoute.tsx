@@ -1,6 +1,6 @@
 import React from "react";
 import {ProductsList} from "../containers/ProductsList";
-import { totalPrice, inCartProducts } from "../providers/ProductsData";
+// import { totalPrice, inCartProducts } from "../providers/ProductsData";
 
 export default function CartRoute() {
     // const groupProducts = inCartProducts.reduce((grouped, obj) => {
@@ -11,16 +11,16 @@ export default function CartRoute() {
 
     // console.log(groupProducts);
     // groupProducts.sort();
-
-    return (
-        <>
-            <div>
-                Products quantity: {inCartProducts.length}
-            </div>
-            <div>
-                Total price: {totalPrice}
-            </div>
-            <ProductsList products={inCartProducts || []}/>
-        </>
-    );
+return null
+    // return (
+    //     <>
+    //         <div>
+    //             Products quantity: {inCartProducts.length}
+    //         </div>
+    //         <div>
+    //             Total price: {totalPrice}
+    //         </div>
+    //         <ProductsList products={inCartProducts || []}/>
+    //     </>
+    // );
 }

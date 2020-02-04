@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
 import { Card, Icon, Button } from "antd";
 import { Link } from "react-router-dom";
-import { CartContext } from "../providers/CartProvider";
+// import { CartContext } from "../providers/CartProvider";
 
 import './Product.css';
 
-export default function Product ({
-     id,
-     title,
-     price,
-     origin,
- }) {
-    const { inCart, addToCart, deleteFromCart } = useContext(CartContext);
+
+
+// @ts-ignore
+export default function Product ({   id,     title,     price,     origin, }) {
+    // @ts-ignore
+    const { inCart, addToCart, deleteFromCart } = useContext(null);
     const isCartProduct = inCart.has(id);
 
     const actions = [
@@ -47,3 +46,4 @@ export default function Product ({
         </Card>
     );
 }
+// @ts-ignore-end

@@ -6,11 +6,13 @@ export const ProductsContext = React.createContext({
     products: [],
 });
 
+// @ts-ignore
 export default function ProductsProvider({ children }) {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
         (async () => {
+            // @ts-ignore
             const { data } = await serviceXHR('get', `${config.url.base}${config.url.products}`);
             setProducts(data.items);
         })();

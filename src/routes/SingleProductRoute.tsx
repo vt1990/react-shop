@@ -6,6 +6,7 @@ import { useProducts } from "../hooks/useProducts";
 export default function SingleProductRoute() {
     const { productId } = useParams();
     const {products}  = useProducts(productId);
+    // @ts-ignore
     const { id, name, price, origin } =
     products || {};
 
