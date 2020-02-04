@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import serviceXHR from '../helpers/ServiceXHR.js';
+import serviceXHR from '../helpers/ServiceXHR';
 import config from '../config.json';
 
 export const ProductsContext = React.createContext({
