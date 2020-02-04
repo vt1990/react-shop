@@ -1,7 +1,7 @@
 import React from "react";
 import { PageHeader, Button } from "antd";
 import { Link } from "react-router-dom";
-
+import { totalPrice } from "../providers/ProductsData";
 export default function AppHeader() {
     return (
         <PageHeader
@@ -14,7 +14,8 @@ export default function AppHeader() {
                 </Link>,
                 <Link key="cart" to="/cart">
                     <Button type="primary">Cart</Button>
-                </Link>
+                </Link>,
+                <Button type="danger">Total price: {totalPrice}</Button>
             ]}
         />
     );

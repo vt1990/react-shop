@@ -1,14 +1,18 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 import ServiceXHR from "../helpers/ServiceXHR";
-import config from "../config";
+import config from "../config.json";
 
-export const useProducts = productId => {
+interface iProductId {
+    productId: string
+}
+
+export const useProducts: iProductId = (productId) => {
     const [products, setProducts] = useState(null);
     const url = `${config.url.base}${config.url.products}/${productId}`;
 
     useEffect(() => {
         ( async () => {
-            const {data} =  await ServiceXHR('get', url);
+            const {data} =  await ServiceXHR('get', url, {});
 
             setProducts(data);
         })();

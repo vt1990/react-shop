@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Card, Icon, Button } from "antd";
 import { Link } from "react-router-dom";
-import { CartContext } from "../providers/CartProvider.js";
+import { CartContext } from "../providers/CartProvider";
 
 import './Product.css';
 
