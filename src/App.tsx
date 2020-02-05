@@ -12,16 +12,18 @@ import SingleProductRoute from "./routes/SingleProductRoute";
 import CartRoute from "./routes/CartRoute";
 import ProductsRoute from "./routes/ProductsRoute";
 import AppHeader from "./ui/AppHeader";
-import ProductsReducer from './containers/Products'
+
+import { devToolsEnhancer } from "redux-devtools-extension";
+import rootReducer from "./store/reducer";
 
 import "./App.css";
 import {Button} from "antd";
 
-const rooReducer = combineReducers({
-  ProductsReducer
-});
-const store = createStore(rooReducer);
 
+const store = createStore(
+    rootReducer,
+    devToolsEnhancer({}),
+);
 
 export default function App() {
   return (
