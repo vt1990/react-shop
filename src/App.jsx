@@ -5,22 +5,22 @@ import Characters from "./pages/Сharacters";
 import { routes } from "./constants/routes";
 import CharacterProfile from "./pages/Сharacters/CharacterProfile";
 import NavBarContainer from "./containers/NavBarContainer";
-import useGetCharactersData from "./hooks/useGetCharactersData";
+import useGetProductsData from "./hooks/useGetProductsData";
 
 function App() {
-  const { characters } = useGetCharactersData();
+  const { products } = useGetProductsData();
   return (
     <Fragment>
       <NavBarContainer />
       <Switch>
-        <Redirect exact from="/" to={routes.characters.index} />
+        <Redirect exact from="/" to={routes.products.index} />
         <Route
-          path={routes.characters.index}
+          path={routes.products.index}
           exact
-          render={() => <Characters characters={characters} />}
+          render={() => <Characters products={products} />}
         />
         <Route
-          path={routes.characters.characterProfile}
+          path={routes.products.characterProfile}
           exact
           component={CharacterProfile}
         />

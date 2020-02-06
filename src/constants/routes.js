@@ -1,8 +1,8 @@
 export const routes = {
-  characters: {
-    index: "/characters",
-    characterProfile: "/characters/:characterId",
-    getCharacterUrl(id) {
+  products: {
+    index: "/products",
+    productProfile: "/products/:productId",
+    getProductUrl(id) {
       return `${this.index}/${id}`;
     }
   }

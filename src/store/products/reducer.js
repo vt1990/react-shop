@@ -1,4 +1,4 @@
-import { GET_CHARACTERS_SUCCESS } from "./actionTypes";
+import { GET_PRODUCTS_SUCCESS } from "./actionTypes";
 
 export const initialState = {
   byId: {},
@@ -6,7 +6,7 @@ export const initialState = {
   selectedIds: []
 };
 
-function saveCharacters(state, action) {
+function saveProducts(state, action) {
   return {
     ...state,
     byId: {
@@ -17,10 +17,10 @@ function saveCharacters(state, action) {
   };
 }
 
-export default function charactersReducer(state = initialState, action) {
+export default function productsReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_CHARACTERS_SUCCESS:
-      return saveCharacters(state, action);
+    case GET_PRODUCTS_SUCCESS:
+      return saveProducts(state, action);
     default:
       return state;
   }
